@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="SelectGA4" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1730,2957" sap2010:WorkflowViewState.IdRef="SelectGA4_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="SelectGA4" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1730,2638" sap2010:WorkflowViewState.IdRef="SelectGA4_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -85,28 +85,28 @@
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SelectGA4" sap:VirtualizedContainerService.HintSize="1740,2892" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SelectGA4" sap:VirtualizedContainerService.HintSize="1740,2573" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Analytics 360 | Home" sap:VirtualizedContainerService.HintSize="1678,2781" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="72ca762b-2b6d-4425-b963-2d12cc0f830f" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Private: Use Browser Chrome: Analytics 360 | Home" sap:VirtualizedContainerService.HintSize="1678,2462" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="72ca762b-2b6d-4425-b963-2d12cc0f830f" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <uix:NCheckState DisplayName="Check App State 'Analytics'" sap:VirtualizedContainerService.HintSize="1644,2564" sap2010:WorkflowViewState.IdRef="NCheckState_1" Version="V3">
+          <uix:NCheckState DisplayName="Check App State 'Analytics'" sap:VirtualizedContainerService.HintSize="1644,2245" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="72ca762b-2b6d-4425-b963-2d12cc0f830f" Version="V3">
             <uix:NCheckState.IfExists>
-              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="512,1975" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="512,1696" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,143" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;[SELECTGA4] Analtics checking&quot;]" />
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1677" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1398" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -131,27 +131,26 @@
                     </uix:NClick.Target>
                   </uix:NClick>
                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;[SELECTGA4] GA4 Enhanced Ecommerced Selected&quot;]" />
-                  <ui:InputDialog Label="{x:Null}" Options="{x:Null}" OptionsString="{x:Null}" Result="{x:Null}" Title="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="388,239" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" />
                 </Sequence>
               </Sequence>
             </uix:NCheckState.IfExists>
             <uix:NCheckState.IfNotExists>
-              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="1078,2307" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="1078,2028" sap2010:WorkflowViewState.IdRef="Sequence_4">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
                 <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1016,143" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;[SELECTGA4] Analtics 360 checking&quot;]" />
-                <uix:NCheckState DisplayName="Check App State 'Analytics 360'" sap:VirtualizedContainerService.HintSize="1016,2009" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="72ca762b-2b6d-4425-b963-2d12cc0f830f" Version="V3">
+                <uix:NCheckState DisplayName="Check App State 'Analytics 360'" sap:VirtualizedContainerService.HintSize="1016,1730" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="72ca762b-2b6d-4425-b963-2d12cc0f830f" Version="V3">
                   <uix:NCheckState.IfExists>
-                    <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="512,1792" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="512,1513" sap2010:WorkflowViewState.IdRef="Sequence_6">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1677" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1398" sap2010:WorkflowViewState.IdRef="Sequence_8">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -176,7 +175,6 @@
                           </uix:NClick.Target>
                         </uix:NClick>
                         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;[SELECTGA4] GA4 Enhanced Ecommerced Selected&quot;]" />
-                        <ui:InputDialog Label="{x:Null}" Options="{x:Null}" OptionsString="{x:Null}" Result="{x:Null}" Title="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="388,239" sap2010:WorkflowViewState.IdRef="InputDialog_3" IsPassword="False" />
                       </Sequence>
                     </Sequence>
                   </uix:NCheckState.IfExists>
