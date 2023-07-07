@@ -12,7 +12,7 @@
   "UiPath.UIAutomationNext.Activities.SearchStepsWeb.FullSelector": "False",
   "UiPath.UIAutomationNext.Activities.SearchStepsWeb.FuzzySelector": "True",
   "UiPath.UIAutomationNext.Activities.SearchStepsWeb.Image": "True",
-  "UiPath.UIAutomationNext.Activities.SearchStepsWeb.ComputerVision": "True",
+  "UiPath.UIAutomationNext.Activities.SearchStepsWeb.ComputerVision": "False",
   "UiPath.UIAutomationNext.Activities.SearchStepsWeb.IgnoreSelectorsWithIdx": "True",
   "UiPath.UIAutomationNext.Activities.SearchStepsJava.InteractionMode": "HardwareEvents",
   "UiPath.UIAutomationNext.Activities.SearchStepsJava.FullSelector": "True",
