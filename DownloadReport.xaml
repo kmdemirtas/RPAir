@@ -1,0 +1,189 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="DownloadReport" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="firstMenuName" Type="InArgument(x:String)" />
+    <x:Property Name="secondMenuName" Type="InArgument(x:String)" />
+    <x:Property Name="columnOption" Type="InArgument(x:String)" />
+    <x:Property Name="timeOption" Type="InArgument(x:String)" />
+    <x:Property Name="dateOption" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1100,983.2</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>DownloadReport_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="DownloadReport" sap:VirtualizedContainerService.HintSize="1110.4,2215.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Use Browser Chrome: Analytics 360 | Home" sap:VirtualizedContainerService.HintSize="1048,2103.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="5512f100-deb8-4d39-b225-011579301b80" Version="V2" WindowResize="Maximize">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1014.4,1886.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NCheckState DisplayName="Check App State 'does Analytics 360 appear on screen'" sap:VirtualizedContainerService.HintSize="952,477.6" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="5512f100-deb8-4d39-b225-011579301b80" Timeout="5" Version="V3">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,259.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="387.2,144" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;[DOWNLOAD REPORT] Google Analytics homepage has been opened.&quot;]" />
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="449.6,205.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Throw Exception="[new Exception(&quot;Google Analytics page is not opened&quot;)]" sap:VirtualizedContainerService.HintSize="387.2,90.4" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="https://analytics.google.com/analytics/web/#/p271248987/reports/intelligenthome?params=_u..nav%3Dmaui%26_u.dateOption%3Dlast28Days&amp;collectionId=5534227202" DesignTimeRectangle="79, 177, 168, 34" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'Analytics 360'" FullSelectorArgument="&lt;webctrl class='gmp-product-lockup-brand' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='gmp-product-lockup-brand' tag='SPAN' type='' aaname=' Analytics 360' check:innerText='Analytics 360' /&gt;" Guid="224a5659-aa8a-4a8d-9309-c3acff588dd7" ImageBase64="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" InformativeScreenshot="2736c71a3db402943905d66b57281037.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Analytics 360 | Home' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+            <uix:NCheckState DisplayName="Check App State 'does GA4 - Enhanced Ecommerce appear on screen'" sap:VirtualizedContainerService.HintSize="952,477.6" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="5512f100-deb8-4d39-b225-011579301b80" Version="V3">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,259.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="387.2,144" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;[DOWNLOAD REPORT] Ecommerce reports page has been opened.&quot;]" />
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="449.6,205.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Throw Exception="[new Exception(&quot;Ecommerce reports page is not opened.&quot;)]" sap:VirtualizedContainerService.HintSize="387.2,90.4" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="https://analytics.google.com/analytics/web/#/p271248987/reports/intelligenthome?params=_u..nav%3Dmaui%26_u.dateOption%3Dlast28Days&amp;collectionId=5534227202" DesignTimeRectangle="290, 129, 365, 35" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'GA4 - Enhanced Ecommerce'" FullSelectorArgument="&lt;webctrl class='gmp-text-name' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='gmp-text-name' tag='SPAN' type='' aaname='GA4 - Enhanced Ecommerce' check:innerText='GA4 - Enhanced Ecommerce' /&gt;" Guid="69234715-2c12-41ad-842e-c43449a35c16" ImageBase64="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" InformativeScreenshot="03b72ef8df08d8b3d9c7bb1faba8f664.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Analytics 360 | Home' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Reports'" sap:VirtualizedContainerService.HintSize="952,157.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5512f100-deb8-4d39-b225-011579301b80" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://analytics.google.com/analytics/web/#/p271248987/reports/intelligenthome?params=_u..nav%3Dmaui%26_u.dateOption%3Dlast28Days&amp;collectionId=5534227202" DesignTimeRectangle="79, 322, 67, 25" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'Reports'" FullSelectorArgument="&lt;webctrl aaname='Reports' class='item-text' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Reports' class='item-text' tag='SPAN' type='' check:innerText='Reports' /&gt;" Guid="df56beb8-4acd-4ce3-9b30-c6a7ea9f6633" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEcAAAAdCAYAAAD4pXGOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAASaSURBVGhD7ZfrU1ZVFMb7w5rGTGUgkLBQUbyUjTWWqQhhZgoKil3GTJJBNCuRi2mijokloIi3ZKIAmwIHeBElSeQSfF7xWzP7zD6Hcw5nbJzB6Xx45sW111r7Oc9ea+3tc5OTkxLDH7E4IYjFCUEsTghicUIQixOCWJwQuMS5dv2GfLZvvwvf152R7rt3ZWJiwhX4f4BLnOPVNfL8nJem4YW586Ws/JCMjY25gmczurq6paGxSX/91qPAV5zzF+pl4P59RdPlK7J0+UoVqO7MWVfwbIb5Fn791qPAV5zmqy0up59vt8r85FTZ+tEOGR0dda39M9Vug4ODCv621/zw96NH8uDB4IxVODw8rIeDv9+6DXKR0+Y2kziGdxiXSOJ0dHZKysIMycnNV9LYSFhz4jtJSXtFYwB/nzpd5xKp5ONPNZYSX78xx/FdkJImVTW104j137sn2wt2aqUa39Vr1srt1lbHBw5wAZcaGiUt4zX1Yy8Ezcpe6cQasEYss9OOAfOSUuTQ4a+mcZlRHD7028rjav/8QKkmB1XVtfoBb617V86d/0FOnjqtpLztBylsL85LklcXZ+m/C3cVqzjYyWOGfSKRkFVvvOnk5UL4cKpa50zF4n/z1i31M+Ikp6arHV/ylpVXaDVs2JQrqemLlDO/jIUvy8o19o8/uyR9UaZkLl2unOFOPHvUnT3n8Aa+4uRt2arE2HDJshVqI5kZbmaDjZvzXGXf15eQ7FWvy5q1b8tfDx+qjRzEQ3hoaMjxbW/v0BwQ7+3rU4EQH2Eqq6pd1dfYdFlP9533Nul+RhzycuJ+7RzUVhw89mOVVY4NXj29vc4hGfiKYwNFC4t2a7kbPxRmrbhkr7aLDQSjjWhFfE3lXGm+6sQbVBw5qnkgjJiIumzFahkYGHD5jY+PS8HOIm3b9o5OR5yMzCWBt1GQOBwEB8J37dn7iVajGRVeBLYVJ5Sb/4HMXZCsPernFwRiTAsgji2WXx5+zazgo/3ImgqEmxEHf+K8vsDO7V27c+d3bSXDF6GKdpe4KhuEzhxT+ouzsqWnp8fxqz1xUv3qL/7o2IIQpXJ4LnBr0JIMX/62/YIq50nFMSDP9Rs3ZfP7W9TXzFSzHiqOPXi3bS+QkZERtbf9+pskvbxw2sxh2n9zrFKFMHPAnDhV6DefTGvYM8ce0uCXtjatPu/MiSKOPVtAV3e37mNXcqK/X2ert2pDxQGmvSDN1Y2Nk9y3/4D6QtCe+tgY5uZaNJXDbWV8yysOO1fpkaNfO0IgEoMf/5y8fJ1t5OJGYiAzmPGLIg5tTXsTy9OAfbBfqL+o+dmfW/inSw2ybUeh2koPlkWvHAN6lPYCtBo2qoiPhDQxgN79ovSgDD9+7MQiDg9IrndaxvYl3vu24P9x69ZvcPwAT4DmlhaHeBRxyEt+9iEHPLBT0RwQopn8CLOreI+rsoFLnCcBr1IIArskDUxbITjEeIfg631pewFR/KK+vIPAPtyEdkUAxGO2BfEG/1mcmWCL47c+mxGLE4KnLg7Pdh5d5t3zLOGpi/MsIxYnBLE4IYjFCUEsTiAm5V/R+so2dFHCQwAAAABJRU5ErkJggg==" InformativeScreenshot="3e63ffcf53621e56e3a5b66a93262358.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Analytics 360 | Home' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NHover DisplayName="Hover 'Reports snapshot'" sap:VirtualizedContainerService.HintSize="952,157.6" sap2010:WorkflowViewState.IdRef="NHover_1" ScopeIdentifier="5512f100-deb8-4d39-b225-011579301b80" Version="V3">
+              <uix:NHover.Target>
+                <uix:TargetAnchorable BrowserURL="https://analytics.google.com/analytics/web/#/p271248987/reports/reportinghub?params=_u..nav%3Dmaui%26_u.dateOption%3Dlast28Days&amp;collectionId=5534227202" DesignTimeRectangle="104, 200, 146, 20" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'Reports snapshot'" FullSelectorArgument="&lt;webctrl aaname='Reports snapshot' class='item-text' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Reports snapshot' class='item-text' tag='SPAN' type='' check:innerText='Reports snapshot' /&gt;" Guid="7a344063-4f4c-46e7-a939-a27e683a4345" ImageBase64="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" InformativeScreenshot="16127d8c0bdb89f6f47ffac40c296f96.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Analytics 360 | Reports snapshot' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
+              </uix:NHover.Target>
+            </uix:NHover>
+            <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll" sap:VirtualizedContainerService.HintSize="952,136.8" sap2010:WorkflowViewState.IdRef="NMouseScroll_1" InteractionMode="HardwareEvents" MovementUnits="10" Version="V3" />
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click" sap:VirtualizedContainerService.HintSize="952,164" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" Version="V3" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-9, -9, 1938, 1048" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAAOMAAADjAQ/m36cAAAFWSURBVFhH7ZexkcIwFEQpgfQyJ5dTgku4EiiB7FKXQAnkl1wJlHAlOKAAUiKx67E0q+/PBUi+m2EUvLGxVn/XsrGkTQjhX3Ev1uT29daBHuy89sWFmsD0BIJwBlvVZB1qAqNBjLMQqss61QRGV2OspMex6FgLx1Tpo27RsRaOqdICtAAvEODy+d6BAxjAh213TJWyADQEVxCEH5A+s46p8nwAmgBrHjlGnWOqFAXg3XvmZIw6x1QpCsBn7plPRJ1jqrQALUAL8DgAivBDcwTnmb1pXy8ACtB81IIzJ9GsGoB37hYGUyccVw3AIXcLg2HWcAb02idiLcdUKQrQm+tK2VyAAr8Nb1rL4/zRbJjeFZh8G9NICknSCUEBvoSc123h6e5F582Idj3APeEoxoSblWyPmE4UFNoDjgZJw2U0XBFFTfZXjcBsCw6A2zQeO6vJfvw9YXMHWFEgcZOEHS4AAAAASUVORK5CYII=" InformativeScreenshot="decb24916494a807bbcff5460ce46768.jpg" Selector="&lt;html app='chrome.exe' title='Analytics 360 | Home' /&gt;" Title="Analytics 360 | Home" Url="https://analytics.google.com/" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

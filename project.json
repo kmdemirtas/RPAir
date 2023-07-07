@@ -2,7 +2,7 @@
   "name": "AnalistaRPAir",
   "projectId": "7aa2651b-6ea9-44b8-8ecc-cfe40f981dc3",
   "description": "Google Analytics Report Automation and AI Supported Forecast",
-  "main": "Main.xaml",
+  "main": "DownloadReport.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.21.0-preview]",
     "UiPath.System.Activities": "[23.6.0-preview]",
@@ -93,6 +93,12 @@
     {
       "filePath": "Main.xaml",
       "uniqueId": "f0e36bf0-bad4-4949-be61-ab5e5425aeb7",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "DownloadReport.xaml",
+      "uniqueId": "543c8496-8ce1-4e86-b514-2be396351a95",
       "input": [],
       "output": []
     }
