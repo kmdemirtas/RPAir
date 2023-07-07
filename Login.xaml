@@ -1,4 +1,12 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Login" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1254,2917" sap2010:WorkflowViewState.IdRef="Login_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Login" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="browser" Type="InOutArgument(ui:Browser)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1100.8,2919.2</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Login_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -88,9 +96,12 @@
       <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
       <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Login Sequence" sap:VirtualizedContainerService.HintSize="1112,2852" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence DisplayName="Login Sequence" sap:VirtualizedContainerService.HintSize="1111.2,2854.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="userName" />
       <Variable x:TypeArguments="ss:SecureString" Name="password" />
@@ -100,28 +111,28 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="googlelogin" CacheStrategy="None" DisplayName="Get Credential" FolderPath="kutayozkoc999@gmail.com's workspace" sap:VirtualizedContainerService.HintSize="1050,143" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[password]" Username="[userName]" />
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="login browser sequence" sap:VirtualizedContainerService.HintSize="1050,2558" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="4fae75aa-bf55-4847-ace2-1ead149a0431" Version="V2">
+    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="googlelogin" CacheStrategy="None" DisplayName="Get Credential" FolderPath="kutayozkoc999@gmail.com's workspace" sap:VirtualizedContainerService.HintSize="1048.8,143.2" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[password]" Username="[userName]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="login browser sequence" sap:VirtualizedContainerService.HintSize="1048.8,2559.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Always" OutUiElement="[browser]" ScopeGuid="4fae75aa-bf55-4847-ace2-1ead149a0431" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <uix:NCheckState DisplayName="Sign in screen check" sap:VirtualizedContainerService.HintSize="1016,2301" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="4fae75aa-bf55-4847-ace2-1ead149a0431" Version="V3">
+          <uix:NCheckState DisplayName="Sign in screen check" sap:VirtualizedContainerService.HintSize="1015.2,2342.4" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="4fae75aa-bf55-4847-ace2-1ead149a0431" Version="V3">
             <uix:NCheckState.IfExists>
-              <Sequence DisplayName="Sign in screen appeared" sap:VirtualizedContainerService.HintSize="512,2084" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <Sequence DisplayName="Sign in screen appeared" sap:VirtualizedContainerService.HintSize="512.8,2084" sap2010:WorkflowViewState.IdRef="Sequence_4">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,1969" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450.4,1968.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;[LOGIN] Login page opened&quot;]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,144" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;[LOGIN] Login page opened&quot;]" />
                   <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Enter Username" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="388,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="4fae75aa-bf55-4847-ace2-1ead149a0431" Text="[userName]" Version="V3">
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable BrowserURL="https://accounts.google.com/v3/signin/identifier?dsh=S-569643079%3A1688722482795622&amp;continue=https%3A%2F%2Fanalytics.google.com%2Fanalytics%2Fweb%2F%23&amp;followup=https%3A%2F%2Fanalytics.google.com%2Fanalytics%2Fweb%2F&amp;ifkv=AeDOFXg9hdrcHX-55EpmOVIKed1ssK9oAIyzndi8jZpnD1A2UNWOVSwKtEqhVdgOWDHAV_5ZH-qlCQ&amp;passive=1209600&amp;service=analytics&amp;flowName=GlifWebSignIn&amp;flowEntry=ServiceLogin" DesignTimeRectangle="785, 521, 366, 54" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'INPUT identifierId'" FullSelectorArgument="&lt;webctrl id='identifierId' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='identifierId' tag='INPUT' type='email' class='whsOnd zHQkBf' aaname='' /&gt;" Guid="338f2c12-f45d-4bde-98cc-130c686176ff" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAXAAAAA4CAYAAADkZaOKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOWSURBVHhe7dgxSxthGMDx+xyZKvQDOHbr5jdwEByzdZIggpSCgrRSOgQcBJGCQ5BCU0optEIn3RQXKQVBqYOQa2I0idGIhqfvk7uLl7SJiabiQ/8/eOC9yyV3l+HvGU+czb2qjC36MjSVk0SqdTorSbrt2MR8UXx9aacgiZVS4yjlr/l/bCfXqm51JbXTmtTqwX6pn8irVEG2dO0XJRl9Xnwdc/DFl5F35XDLqR3LTCovGzWRrZWcpHfC/W30teD8Af2c4YxeX1Wy875kmyfSewy3t/OSWDh2eyIVycz6kvnplh3v171/8pd8a16i+/yX8c9v9ebraev3yTAMExtttLZam608Xfwt3NF0Fotbu54D7pq7X5SZuZwMN8/Ze8DbQxy/pn4Cfn29nQPefg/BseE5Ot2vXnfsu4ym03URcIZhehlttrbb05rrjonVkhQq0aNwLwYR8FPJzPmS3joLX9Dg9fcEPvqxEm45//oJfOlY3EeHengCb/xHEVwPANyVNlpbrc3WdnvR03d/8VaDCHhZFp/78nb/0q0vxV/Py0gfAW/sn3TXcOjeXz+X3Q8uxMsnjcjeFPARF2NfT1s+kfQLPfbCbXQJeM2t3bWmt8/dRnitc0dyoId1vN8L2VjOyfhqWUr69dYqkl05kl09LwDcgrY6egr3dKHTP41b62O9TtefFELXAXdN+1GQpP4RmcxJ6lNBpl0wP+f1oB4CLldS+l6QZ9PBuceXirIbPszfFPDRhXzzfcn35fDJukvA1aF7wp8N3vP0tftDc3QV7O92v2dlyS758kS/nylfZtZjP90AwC1Evb1DwO1q/wkFACwh4AQcgFH/dcABwDICDgBGEXAAMIqAA4BRBBwAjCLgAGAUAQcAowg4ABhFwAHAKAIOAEYRcAAwamABfzT0OFwBAO4DAQcAowg4ABhFwAHAKAIOAEYRcAAwioADgFEEHACMIuAAYBQBBwCjCDgAGEXAAcAoAg4ARhFwADCKgAOAUQQcAIwi4ABgFAEHAKMIOAAYNbCAAwDuFwEHAKMIOAAYRcABwCgCDgBGEXAAMIqAA4BRBBwAjCLgAGAUAQcAowg4ABhFwAHAKAIOAEYRcAAwioADgFHNgA9NBYtCpR6+BAB4qLTV2mxttze26Dc2JlZLRBwAHjBttLZam63t9jb3qo2S6w6GYRjm4Y82W9vtadV1oTUn5AzDMA93tNHaam22iMhv3Nz7f4EaoHwAAAAASUVORK5CYII=" InformativeScreenshot="c238d65d24c90d4a35a0c4844aa062d5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Google Analytics' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
@@ -163,13 +174,13 @@
               </Sequence>
             </uix:NCheckState.IfExists>
             <uix:NCheckState.IfNotExists>
-              <Sequence DisplayName="Sign in screen not appeared" sap:VirtualizedContainerService.HintSize="450,258" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence DisplayName="Sign in screen not appeared" sap:VirtualizedContainerService.HintSize="449.6,259.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;[LOGIN] User already signed&quot;]" />
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="387.2,144" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;[LOGIN] User already signed&quot;]" />
               </Sequence>
             </uix:NCheckState.IfNotExists>
             <uix:NCheckState.Target>
