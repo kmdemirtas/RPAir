@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="ReadCSV" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1244,2277" sap2010:WorkflowViewState.IdRef="ReadCSV_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="ReadCSV" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1077.6,2054.4" sap2010:WorkflowViewState.IdRef="ReadCSV_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -105,7 +105,7 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ReadCSV" sap:VirtualizedContainerService.HintSize="672,2212" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ReadCSV" sap:VirtualizedContainerService.HintSize="635.2,1989.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="datatable_from_csv" />
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="myDict" />
@@ -115,70 +115,51 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="610,2101" sap2010:WorkflowViewState.IdRef="TryCatch_1">
-      <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="572,1872" sap2010:WorkflowViewState.IdRef="Sequence_8">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,141" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;[CSV READING] Csv reading is starting&quot;]" />
-          <Assign sap:VirtualizedContainerService.HintSize="510,82" sap2010:WorkflowViewState.IdRef="Assign_7">
-            <Assign.To>
-              <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[myDict]</OutArgument>
-            </Assign.To>
-            <Assign.Value>
-              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[new Dictionary(of String, String)]</InArgument>
-            </Assign.Value>
-          </Assign>
-          <ui:ReadCsvFile DataTable="[datatable_from_csv]" Delimitator="Comma" DisplayName="Read CSV" FilePath="Q:\Users\K_OZKOC\Desktop\24ay-dil.csv" sap:VirtualizedContainerService.HintSize="510,154" sap2010:WorkflowViewState.IdRef="ReadCsvFile_3" />
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,141" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;[CSV READING] Csv reading is successfully&quot;]" />
-          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[datatable_from_csv]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="510,486" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
-            <ui:ForEachRow.Body>
-              <ActivityAction x:TypeArguments="sd:DataRow">
-                <ActivityAction.Argument>
-                  <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Row" />
-                </ActivityAction.Argument>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,300" sap2010:WorkflowViewState.IdRef="Sequence_7">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_8">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:String">[myDict(Row.Item(0).ToString())]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">[Row.Item(1).ToString()]</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="434,90" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[Row.Item(0).ToString()]" />
-                </Sequence>
-              </ActivityAction>
-            </ui:ForEachRow.Body>
-          </ui:ForEachRow>
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,143" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;[CSV READING] datatable to dictionary successfully&quot;]" />
-          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="510,91" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[myDict(&quot;Turkish&quot;)]" />
-          <ui:InputDialog Label="{x:Null}" Options="{x:Null}" OptionsString="{x:Null}" Result="{x:Null}" Title="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="510,243" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" />
-        </Sequence>
-      </TryCatch.Try>
-      <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="576,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <ActivityAction x:TypeArguments="s:Exception">
+    <Sequence sap:VirtualizedContainerService.HintSize="572.8,1877.6" sap2010:WorkflowViewState.IdRef="Sequence_8">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;[CSV READING] Csv reading is starting&quot;]" />
+      <Assign sap:VirtualizedContainerService.HintSize="510.4,81.6" sap2010:WorkflowViewState.IdRef="Assign_7">
+        <Assign.To>
+          <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[myDict]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[new Dictionary(of String, String)]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:ReadCsvFile DataTable="[datatable_from_csv]" Delimitator="Comma" DisplayName="Read CSV" FilePath="Q:\Users\K_OZKOC\Desktop\24ay-dil.csv" sap:VirtualizedContainerService.HintSize="510.4,155.2" sap2010:WorkflowViewState.IdRef="ReadCsvFile_3" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;[CSV READING] Csv reading is successfully&quot;]" />
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[datatable_from_csv]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="510.4,489.6" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+        <ui:ForEachRow.Body>
+          <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
-              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+              <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Row" />
             </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476.8,301.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign sap:VirtualizedContainerService.HintSize="433.6,81.6" sap2010:WorkflowViewState.IdRef="Assign_8">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[myDict(Row.Item(0).ToString())]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[Row.Item(1).ToString()]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="433.6,90.4" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[Row.Item(0).ToString()]" />
+            </Sequence>
           </ActivityAction>
-        </Catch>
-      </TryCatch.Catches>
-    </TryCatch>
+        </ui:ForEachRow.Body>
+      </ui:ForEachRow>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510.4,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;[CSV READING] datatable to dictionary successfully&quot;]" />
+      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="510.4,90.4" sap2010:WorkflowViewState.IdRef="WriteLine_4" Text="[myDict(&quot;Turkish&quot;)]" />
+      <ui:InputDialog Label="{x:Null}" Options="{x:Null}" OptionsString="{x:Null}" Result="{x:Null}" Title="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="510.4,241.6" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" />
+    </Sequence>
   </Sequence>
 </Activity>

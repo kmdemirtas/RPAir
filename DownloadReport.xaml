@@ -5,12 +5,13 @@
     <x:Property Name="columnOption" Type="InArgument(x:String)" />
     <x:Property Name="timeOption" Type="InArgument(x:String)" />
     <x:Property Name="dateOption" Type="InArgument(x:String)" />
-    <x:Property Name="browser" Type="InOutArgument(ui:Browser)" />
+    <x:Property Name="in_out_browser" Type="InOutArgument(ui:Browser)" />
+    <x:Property Name="out_file_name" Type="OutArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1100,4643.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1176.8,5906.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>DownloadReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -56,79 +57,80 @@
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
     <sco:Collection x:TypeArguments="AssemblyReference">
-      <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
-      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
       <AssemblyReference>System.Data</AssemblyReference>
       <AssemblyReference>System.Data.Common</AssemblyReference>
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
-      <AssemblyReference>System</AssemblyReference>
-      <AssemblyReference>System.Linq</AssemblyReference>
       <AssemblyReference>System.Drawing</AssemblyReference>
-      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
       <AssemblyReference>System.Drawing.Common</AssemblyReference>
-      <AssemblyReference>System.Core</AssemblyReference>
-      <AssemblyReference>System.Xml</AssemblyReference>
-      <AssemblyReference>System.Xml.Linq</AssemblyReference>
-      <AssemblyReference>System.Xaml</AssemblyReference>
-      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
-      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
-      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
-      <AssemblyReference>System.ObjectModel</AssemblyReference>
-      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
-      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
-      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
-      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Platform</AssemblyReference>
-      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
-      <AssemblyReference>NPOI</AssemblyReference>
-      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
-      <AssemblyReference>System.Console</AssemblyReference>
-      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
-      <AssemblyReference>System.Security.Permissions</AssemblyReference>
-      <AssemblyReference>System.ComponentModel</AssemblyReference>
-      <AssemblyReference>System.Memory</AssemblyReference>
-      <AssemblyReference>System.Private.Uri</AssemblyReference>
-      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
-      <AssemblyReference>PresentationFramework</AssemblyReference>
-      <AssemblyReference>WindowsBase</AssemblyReference>
-      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
-      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
-      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
-      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
-      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
-      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
-      <AssemblyReference>UiPath.Workflow</AssemblyReference>
-      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
-      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
-      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
-      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
-      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
       <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
-      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="DownloadReport" sap:VirtualizedContainerService.HintSize="1110.4,4578.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="DownloadReport" sap:VirtualizedContainerService.HintSize="1187.2,5841.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Analytics 360 | Home" sap:VirtualizedContainerService.HintSize="1048,4213.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[browser]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[browser]" ScopeGuid="5512f100-deb8-4d39-b225-011579301b80" Version="V2" WindowResize="Maximize">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Analytics 360 | Home" sap:VirtualizedContainerService.HintSize="1201.6,7415.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_out_browser]" InteractionMode="DebuggerApi" OpenMode="Never" OutUiElement="[in_out_browser]" ScopeGuid="5512f100-deb8-4d39-b225-011579301b80" Version="V2" WindowResize="Maximize">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1014.4,4076.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1168,7278.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="si:FileInfo" Default="[new FileInfo(&quot;data-export.csv&quot;)]" Name="fileInfo" />
               <Variable x:TypeArguments="x:String" Name="today" />
@@ -136,6 +138,7 @@
               <Variable x:TypeArguments="x:Boolean" Default="False" Name="fileAlreadyExists" />
               <Variable x:TypeArguments="x:String" Default="data-export.csv" Name="defaultFileName" />
               <Variable x:TypeArguments="x:String" Default="Q:\Users\k_demirtas2\Downloads\" Name="downloadPath" />
+              <Variable x:TypeArguments="x:Boolean" Default="True" Name="reportsNotOpened" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -143,7 +146,7 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NCheckState DisplayName="Check App State 'does Analytics 360 appear on screen'" sap:VirtualizedContainerService.HintSize="952,52.8" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="5512f100-deb8-4d39-b225-011579301b80" Timeout="5" Version="V3">
+            <uix:NCheckState DisplayName="Check App State 'does Analytics 360 appear on screen'" sap:VirtualizedContainerService.HintSize="1105.6,517.6" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="5512f100-deb8-4d39-b225-011579301b80" Timeout="15" Version="V3">
               <uix:NCheckState.IfExists>
                 <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,259.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
@@ -169,12 +172,12 @@
               </uix:NCheckState.Target>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NCheckState>
-            <uix:NCheckState DisplayName="Check App State 'does GA4 - Enhanced Ecommerce appear on screen'" sap:VirtualizedContainerService.HintSize="952,52.8" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="5512f100-deb8-4d39-b225-011579301b80" Timeout="15" Version="V3">
+            <uix:NCheckState DisplayName="Check App State 'does GA4 - Enhanced Ecommerce appear on screen'" sap:VirtualizedContainerService.HintSize="1105.6,477.6" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="5512f100-deb8-4d39-b225-011579301b80" Timeout="15" Version="V3">
               <uix:NCheckState.IfExists>
                 <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,259.2" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <sap:WorkflowViewStateService.ViewState>
@@ -200,12 +203,12 @@
               </uix:NCheckState.Target>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NCheckState>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Reports'" sap:VirtualizedContainerService.HintSize="952,52.8" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5512f100-deb8-4d39-b225-011579301b80" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Reports'" sap:VirtualizedContainerService.HintSize="1028.8,52.8" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5512f100-deb8-4d39-b225-011579301b80" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://analytics.google.com/analytics/web/#/p271248987/reports/intelligenthome?params=_u..nav%3Dmaui%26_u.dateOption%3Dlast28Days&amp;collectionId=5534227202" DesignTimeRectangle="79, 322, 67, 25" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'Reports'" FullSelectorArgument="&lt;webctrl aaname='Reports' class='item-text' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Reports' class='item-text' tag='SPAN' type='' check:innerText='Reports' /&gt;" Guid="df56beb8-4acd-4ce3-9b30-c6a7ea9f6633" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEcAAAAdCAYAAAD4pXGOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAASaSURBVGhD7ZfrU1ZVFMb7w5rGTGUgkLBQUbyUjTWWqQhhZgoKil3GTJJBNCuRi2mijokloIi3ZKIAmwIHeBElSeQSfF7xWzP7zD6Hcw5nbJzB6Xx45sW111r7Oc9ea+3tc5OTkxLDH7E4IYjFCUEsTghicUIQixOCWJwQuMS5dv2GfLZvvwvf152R7rt3ZWJiwhX4f4BLnOPVNfL8nJem4YW586Ws/JCMjY25gmczurq6paGxSX/91qPAV5zzF+pl4P59RdPlK7J0+UoVqO7MWVfwbIb5Fn791qPAV5zmqy0up59vt8r85FTZ+tEOGR0dda39M9Vug4ODCv621/zw96NH8uDB4IxVODw8rIeDv9+6DXKR0+Y2kziGdxiXSOJ0dHZKysIMycnNV9LYSFhz4jtJSXtFYwB/nzpd5xKp5ONPNZYSX78xx/FdkJImVTW104j137sn2wt2aqUa39Vr1srt1lbHBw5wAZcaGiUt4zX1Yy8Ezcpe6cQasEYss9OOAfOSUuTQ4a+mcZlRHD7028rjav/8QKkmB1XVtfoBb617V86d/0FOnjqtpLztBylsL85LklcXZ+m/C3cVqzjYyWOGfSKRkFVvvOnk5UL4cKpa50zF4n/z1i31M+Ikp6arHV/ylpVXaDVs2JQrqemLlDO/jIUvy8o19o8/uyR9UaZkLl2unOFOPHvUnT3n8Aa+4uRt2arE2HDJshVqI5kZbmaDjZvzXGXf15eQ7FWvy5q1b8tfDx+qjRzEQ3hoaMjxbW/v0BwQ7+3rU4EQH2Eqq6pd1dfYdFlP9533Nul+RhzycuJ+7RzUVhw89mOVVY4NXj29vc4hGfiKYwNFC4t2a7kbPxRmrbhkr7aLDQSjjWhFfE3lXGm+6sQbVBw5qnkgjJiIumzFahkYGHD5jY+PS8HOIm3b9o5OR5yMzCWBt1GQOBwEB8J37dn7iVajGRVeBLYVJ5Sb/4HMXZCsPernFwRiTAsgji2WXx5+zazgo/3ImgqEmxEHf+K8vsDO7V27c+d3bSXDF6GKdpe4KhuEzhxT+ouzsqWnp8fxqz1xUv3qL/7o2IIQpXJ4LnBr0JIMX/62/YIq50nFMSDP9Rs3ZfP7W9TXzFSzHiqOPXi3bS+QkZERtbf9+pskvbxw2sxh2n9zrFKFMHPAnDhV6DefTGvYM8ce0uCXtjatPu/MiSKOPVtAV3e37mNXcqK/X2ert2pDxQGmvSDN1Y2Nk9y3/4D6QtCe+tgY5uZaNJXDbWV8yysOO1fpkaNfO0IgEoMf/5y8fJ1t5OJGYiAzmPGLIg5tTXsTy9OAfbBfqL+o+dmfW/inSw2ybUeh2koPlkWvHAN6lPYCtBo2qoiPhDQxgN79ovSgDD9+7MQiDg9IrndaxvYl3vu24P9x69ZvcPwAT4DmlhaHeBRxyEt+9iEHPLBT0RwQopn8CLOreI+rsoFLnCcBr1IIArskDUxbITjEeIfg631pewFR/KK+vIPAPtyEdkUAxGO2BfEG/1mcmWCL47c+mxGLE4KnLg7Pdh5d5t3zLOGpi/MsIxYnBLE4IYjFCUEsTiAm5V/R+so2dFHCQwAAAABJRU5ErkJggg==" InformativeScreenshot="3e63ffcf53621e56e3a5b66a93262358.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Analytics 360 | Home' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
@@ -216,8 +219,8 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="952,144" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;[DOWNLOAD REPORT] Reports button clicked&quot;]" />
-            <uix:NHover DisplayName="Hover 'Reports snapshot'" sap:VirtualizedContainerService.HintSize="952,52.8" sap2010:WorkflowViewState.IdRef="NHover_1" ScopeIdentifier="5512f100-deb8-4d39-b225-011579301b80" Version="V3">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1028.8,144" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;[DOWNLOAD REPORT] Reports button clicked&quot;]" />
+            <uix:NHover DisplayName="Hover 'Reports snapshot'" sap:VirtualizedContainerService.HintSize="1028.8,52.8" sap2010:WorkflowViewState.IdRef="NHover_1" ScopeIdentifier="5512f100-deb8-4d39-b225-011579301b80" Version="V3">
               <uix:NHover.Target>
                 <uix:TargetAnchorable BrowserURL="https://analytics.google.com/analytics/web/#/p271248987/reports/reportinghub?params=_u..nav%3Dmaui%26_u.dateOption%3Dlast28Days&amp;collectionId=5534227202" DesignTimeRectangle="104, 200, 146, 20" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'Reports snapshot'" FullSelectorArgument="&lt;webctrl aaname='Reports snapshot' class='item-text' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Reports snapshot' class='item-text' tag='SPAN' type='' check:innerText='Reports snapshot' /&gt;" Guid="7a344063-4f4c-46e7-a939-a27e683a4345" ImageBase64="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" InformativeScreenshot="16127d8c0bdb89f6f47ffac40c296f96.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Analytics 360 | Reports snapshot' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
               </uix:NHover.Target>
@@ -228,7 +231,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NHover>
-            <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll to Bottom" sap:VirtualizedContainerService.HintSize="952,52.8" sap2010:WorkflowViewState.IdRef="NMouseScroll_1" InteractionMode="HardwareEvents" MovementUnits="10" Version="V3">
+            <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll to Bottom" sap:VirtualizedContainerService.HintSize="1028.8,52.8" sap2010:WorkflowViewState.IdRef="NMouseScroll_1" InteractionMode="HardwareEvents" MovementUnits="10" Version="V3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -236,7 +239,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NMouseScroll>
-            <uix:NCheckState DisplayName="Check App State 'does firstMenuName item appear on screen'" sap:VirtualizedContainerService.HintSize="952,491.2" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="5512f100-deb8-4d39-b225-011579301b80" Version="V3">
+            <uix:NCheckState DisplayName="Check App State 'does firstMenuName item appear on screen'" sap:VirtualizedContainerService.HintSize="1028.8,491.2" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="5512f100-deb8-4d39-b225-011579301b80" Version="V3">
               <uix:NCheckState.IfExists>
                 <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,272.8" sap2010:WorkflowViewState.IdRef="Sequence_7">
                   <sap:WorkflowViewStateService.ViewState>
@@ -271,8 +274,8 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NCheckState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="952,144" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;[DOWNLOAD REPORT] firstMenuName button clicked&quot;]" />
-            <uix:NCheckState DisplayName="Check App State 'does secondMenuName item appear on screen'" sap:VirtualizedContainerService.HintSize="952,52.8" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="5512f100-deb8-4d39-b225-011579301b80" Version="V3">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1028.8,144" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;[DOWNLOAD REPORT] firstMenuName button clicked&quot;]" />
+            <uix:NCheckState DisplayName="Check App State 'does secondMenuName item appear on screen'" sap:VirtualizedContainerService.HintSize="1028.8,52.8" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="5512f100-deb8-4d39-b225-011579301b80" Version="V3">
               <uix:NCheckState.IfExists>
                 <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,272.8" sap2010:WorkflowViewState.IdRef="Sequence_9">
                   <sap:WorkflowViewStateService.ViewState>
@@ -315,7 +318,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NMouseScroll>
-            <If Condition="[columnOption &lt;&gt; Nothing]" DisplayName="If there is columnOption" sap:VirtualizedContainerService.HintSize="952,52.8" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[columnOption &lt;&gt; Nothing]" DisplayName="If there is columnOption" sap:VirtualizedContainerService.HintSize="1028.8,52.8" sap2010:WorkflowViewState.IdRef="If_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -323,15 +326,15 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="995.2,905.6" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                <Sequence sap:VirtualizedContainerService.HintSize="995.2,825.6" sap2010:WorkflowViewState.IdRef="Sequence_13">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NCheckState DisplayName="Check App State 'does column option button appear on screen'" sap:VirtualizedContainerService.HintSize="952,341.6" sap2010:WorkflowViewState.IdRef="NCheckState_5" ScopeIdentifier="5512f100-deb8-4d39-b225-011579301b80" Version="V3">
+                  <uix:NCheckState DisplayName="Check App State 'does column option button appear on screen'" sap:VirtualizedContainerService.HintSize="952,301.6" sap2010:WorkflowViewState.IdRef="NCheckState_5" ScopeIdentifier="5512f100-deb8-4d39-b225-011579301b80" Version="V3">
                     <uix:NCheckState.IfExists>
-                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,269.6" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,83.2" sap2010:WorkflowViewState.IdRef="Sequence_11">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -379,7 +382,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NCheckState>
-                  <uix:NCheckState DisplayName="Check App State 'does column option menu appear on screen'" sap:VirtualizedContainerService.HintSize="952,341.6" sap2010:WorkflowViewState.IdRef="NCheckState_6" ScopeIdentifier="5512f100-deb8-4d39-b225-011579301b80" Version="V3">
+                  <uix:NCheckState DisplayName="Check App State 'does column option menu appear on screen'" sap:VirtualizedContainerService.HintSize="952,301.6" sap2010:WorkflowViewState.IdRef="NCheckState_6" ScopeIdentifier="5512f100-deb8-4d39-b225-011579301b80" Version="V3">
                     <uix:NCheckState.IfExists>
                       <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,83.2" sap2010:WorkflowViewState.IdRef="Sequence_15">
                         <sap:WorkflowViewStateService.ViewState>
@@ -470,8 +473,8 @@
                 </Sequence>
               </If.Else>
             </If>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="952,144" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;[DOWNLOAD REPORT] column option selected&quot;]" />
-            <If Condition="[timeOption &lt;&gt; Nothing]" DisplayName="If timeOption is available" sap:VirtualizedContainerService.HintSize="952,52.8" sap2010:WorkflowViewState.IdRef="If_2">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1028.8,144" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;[DOWNLOAD REPORT] column option selected&quot;]" />
+            <If Condition="[timeOption &lt;&gt; Nothing]" DisplayName="If timeOption is available" sap:VirtualizedContainerService.HintSize="1105.6,1698.4" sap2010:WorkflowViewState.IdRef="If_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -479,7 +482,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="1072,1410.4" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                <Sequence sap:VirtualizedContainerService.HintSize="1072,1515.2" sap2010:WorkflowViewState.IdRef="Sequence_19">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -716,13 +719,13 @@
                       <Sequence sap2010:WorkflowViewState.IdRef="Sequence_32" />
                     </If.Else>
                   </If>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Apply'" sap:VirtualizedContainerService.HintSize="1028.8,52.8" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5512f100-deb8-4d39-b225-011579301b80" Version="V3">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Apply'" sap:VirtualizedContainerService.HintSize="1028.8,157.6" sap2010:WorkflowViewState.IdRef="NClick_13" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5512f100-deb8-4d39-b225-011579301b80" Version="V3">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://analytics.google.com/analytics/web/#/p271248987/reports/explorer?params=_u..nav%3Dmaui%26_u.dateOption%3Dlast28Days&amp;r=user-demographics-detail&amp;ruid=user-demographics-detail,user,demographics&amp;collectionId=user" DesignTimeRectangle="1577, 828, 75, 45" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'Apply'" FullSelectorArgument="&lt;webctrl aaname='             Apply           ' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='             Apply           ' tag='BUTTON' type='button' class='ga-custom-range-apply action-button md-primary md-button md-ga-theme md-ink-ripple' check:innerText='Apply' /&gt;" Guid="ef457950-d643-4537-b0fb-bd023ec18792" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAE8AAAAxCAYAAACbHPQ3AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAPtSURBVGhD7Zf7S1RBFMf7O6IkKgiKoOhBRVS/RVAUQRD91ov6qV8yKyJ6aZmFRdnDil7+IFkQhJAJVhRFLyTJijCsrMjd666ru+6a7u5pvrN7dLysuu25Gsl84HJ17uy9cz9z5py548iSM1aeACtPgJUnwMoTYOUJsPIEWHkCrDwBVp4AK0+AlSfAyhNg5Qmw8gRYeQKsPAGeyuuNE51/FKEdlSGqeh1Nt44ONY3d+rlvW3rSLSOPp/KanTjNOuSn8TtbacXpAHVEk+krI09pbUQ/t7qhO90y8ngq7+LjLv0CeQWpo/b96L3Ify0v2pOkdReCNPOAn8oeRrS8/KoOSg4TfD3xJPk6EhSKJtItg9MZS9KvUIJi6llu/mt5L5p/09S9PlpfHqTvwTgtOd5Gcw479EUtZZP6bz00bZ+Ptt4I6fw4ZY9PvzSO5aUB+tTam+7ZL6TieZQ2Xm2nCfmpfhN3tVLB7Q4Kd/dLNOU1/uylGfv9tLjY0RNjgtWAicVEY8IleCbv4L1OPfjKl6lC4f6fYXl5SgBeYvXZgE70S0vadP9Fxxz62pYSzkLQD7/ZdK2dtleEaLoSg3b8DpFr9oU8FK4t11OyzcI1WHuueCIPs4tZNiONI9E9w33ylJBbr6J9yxoSIAMCiqrDuo2FLChyqMnXH5GQC8m4P54DTHmg7kM3Tdo98PkckYjwQGT4NDEcnsirbojp2cSsYnYBKi0qLkRBGMPyEHHIYSZcrfkaC8HZDSLavOaWxznYFMwFDWcvEMvjpYBBDXZwJAGWh+XnBsVg3hFHH/jbLcQEbbjG98nUF0sTk4rC1d6V0JOZKQ/nilgeRwuWCAY2V704H7NVO5I7iocTTi2TbCJv5ZnsI6+kZuASN+WZ6aRcRVu2O4BsEcvjpZBpUNhSoPpi0LznY3mQfbc+ptsAfnvyQVjfC5UUsBCziACkhFVKMO5b9zF130zygLn3NJewF4jkIToQQZPVduNZU+ZBcYRwPmR5XG233QzRladdtKYsoJcYovWzP1UcWAj6ocIW3w/TCRVpWNZox/YlU7U1wRJF5Jlj8AqRPK6oQ32K8eBZCsvbcClIhSoXYlnjxXAsPOoM+DZlIafUee25YF8/SN6sti3mMweTF1fZAn3N6PcK8bL9W9w5DweKQ5vKie5lz0JwxjX0QV93rhwKnryR+Nb+5/KGwpSXK6j0uIdX2xOTMS2Pqy3SQUvAw2SXZtTlvfvRS8vUpxjyUMT4Ns3E5SddesuDcy7ceROj+YWOKHKHYtTljSWsPAFWngArT4CVJ8DKE2DlCbDyBFh5Aqw8AVaeACtPgJUnwMoTYOXlDNEf65Xgbl+PTW4AAAAASUVORK5CYII=" InformativeScreenshot="38b9a9fe15e82904efdde104ac0e9bfe.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Analytics 360 | Demographic details: Country' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive" />
                     </uix:NClick.Target>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
@@ -734,8 +737,8 @@
               </If.Else>
             </If>
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="952,144" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;[DOWNLOAD REPORT] time option selected&quot;]" />
-            <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll" sap:VirtualizedContainerService.HintSize="952,136.8" sap2010:WorkflowViewState.IdRef="NMouseScroll_3" InteractionMode="HardwareEvents" MovementUnits="10" Version="V3" />
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'share button'" sap:VirtualizedContainerService.HintSize="952,52.8" sap2010:WorkflowViewState.IdRef="NClick_14" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5512f100-deb8-4d39-b225-011579301b80" Version="V3">
+            <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll" sap:VirtualizedContainerService.HintSize="1028.8,136.8" sap2010:WorkflowViewState.IdRef="NMouseScroll_3" InteractionMode="HardwareEvents" MovementUnits="10" Version="V3" />
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'share button'" sap:VirtualizedContainerService.HintSize="1028.8,52.8" sap2010:WorkflowViewState.IdRef="NClick_14" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5512f100-deb8-4d39-b225-011579301b80" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://analytics.google.com/analytics/web/#/p271248987/reports/explorer?params=_u..nav%3Dmaui%26_u.dateOption%3Dlast28Days%26_u.comparisonOption%3Ddisabled&amp;r=user-demographics-detail&amp;ruid=user-demographics-detail,user,demographics&amp;collectionId=user" DesignTimeRectangle="1710, 187, 60, 60" DesignTimeScaleFactor="1.25" FriendlyName="'SPAN'" FullSelectorArgument="&lt;webctrl class='mat-mdc-button-touch-target' css-selector='body&amp;gt;ga-hybrid-app-root&amp;gt;ui-view-wrapper&amp;gt;div&amp;gt;app-root&amp;gt;div&amp;gt;div&amp;gt;ui-view-wrapper&amp;gt;div&amp;gt;ga-report-container&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ui-view-wrapper&amp;gt;div&amp;gt;ui-view&amp;gt;ga-explorer-report&amp;gt;div&amp;gt;ga-report-header-v2&amp;gt;div&amp;gt;div&amp;gt;ga-report-toolbar-component&amp;gt;ga-toolbar-component&amp;gt;mat-toolbar&amp;gt;mat-toolbar-row&amp;gt;ga-toolbar-icon-button-component&amp;gt;button&amp;gt;span' idx='2' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='mat-mdc-button-touch-target' type='' aaname='' tag='SPAN' /&gt;" Guid="bfed194b-3faa-471d-b366-452239b25623" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAI5SURBVHhe7ZnPaxpBGIb7n3qowl48iCBFkKXSHIIlCCEETC6ChRRKkrKHmEMPFcoeIoQQycEgC+mC1IhSYjDN5e1oO3XTfqUlm9kd+L7Dc/Blv4V5Zpxf++zu2z04IwKokBMigAo5IQKokBMigAo5IQKokBMigAo5IQKokBMigAo5IQKokBPWCrgJeuh+8pdcBLfkM0+BhQK+4qxRQva5g0yEYuMEE/L5eFgnYHS8/kfjNbXjMVkTB8sEDNF2dYNdeAM19AcHeKkluB5GZN3jsUzAZ7TLWsA2unOVzX00tICyh5Csezz2CJiPEXzYQSWnBTjIV7fRqBZ+/c7WfdxQtTGwQsDk3EO9sGo4Se4V2ld0fRzSFXDdQ7sWnfHzqOz6CAMfLdXzP/K8GglNdEMzS2E6AmZDnO1toBgZ7tmyuUb+jctBYFDAbIyLozfYqpZQrG7i7VEPo9ktwk4TFWfV8IzjotUZ0u9IADMCpqdovYg08ifZSI9nciXUD3uYLGZ66h0JYURAv7mauTNOAflojyuKNQ/9a7o2aQwIiK7lG+hMVTb9iLoWYGAtj4MIoMK4MP8LKP53Etw7QTgj6hPEjIAFrJfBf6E2Qt1d98GxN42N0IJ0BGi+cN0K/0Zah6F3++/tELBEHYf7hw/PB6aPw2vrry0SsCTZCxG7RsAS9ldi7C9FFzC/Ftcw/jCSLCKACjkhAqiQEyKACjkhAqiQEyKACjkhAqiQEyKACjkhAqiQEyKACvlwj++fQXbtn1puLwAAAABJRU5ErkJggg==" InformativeScreenshot="d431fd1ca2046982660af6cb55d7b746.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Analytics 360 | Demographic details: Country' /&gt;" SearchSteps="Selector, Image" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
@@ -746,8 +749,8 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NClick>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="952,144" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;[DOWNLOAD REPORT] share button clicked&quot;]" />
-            <uix:NCheckState DisplayName="Check App State 'does download menu appear on screen'" sap:VirtualizedContainerService.HintSize="952,52.8" sap2010:WorkflowViewState.IdRef="NCheckState_13" ScopeIdentifier="5512f100-deb8-4d39-b225-011579301b80" Version="V3">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1028.8,144" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;[DOWNLOAD REPORT] share button clicked&quot;]" />
+            <uix:NCheckState DisplayName="Check App State 'does download menu appear on screen'" sap:VirtualizedContainerService.HintSize="1028.8,52.8" sap2010:WorkflowViewState.IdRef="NCheckState_13" ScopeIdentifier="5512f100-deb8-4d39-b225-011579301b80" Version="V3">
               <uix:NCheckState.IfExists>
                 <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="449.6,272.8" sap2010:WorkflowViewState.IdRef="Sequence_33">
                   <sap:WorkflowViewStateService.ViewState>
@@ -782,7 +785,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NCheckState>
-            <TryCatch DisplayName="Try to remove default file if exists" sap:VirtualizedContainerService.HintSize="952,52.8" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+            <TryCatch DisplayName="Try to remove default file if exists" sap:VirtualizedContainerService.HintSize="1028.8,52.8" sap2010:WorkflowViewState.IdRef="TryCatch_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -844,7 +847,7 @@
                 </Catch>
               </TryCatch.Catches>
             </TryCatch>
-            <TryCatch DisplayName="Try Catch Download CSV" sap:VirtualizedContainerService.HintSize="952,52.8" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+            <TryCatch DisplayName="Try Catch Download CSV" sap:VirtualizedContainerService.HintSize="1028.8,52.8" sap2010:WorkflowViewState.IdRef="TryCatch_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -894,8 +897,8 @@
                 </Catch>
               </TryCatch.Catches>
             </TryCatch>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="952,144" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;[DOWNLOAD REPORT] report file downloaded&quot;]" />
-            <Assign DisplayName="Assign today value to variable " sap:VirtualizedContainerService.HintSize="952,82.4" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1105.6,144" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;[DOWNLOAD REPORT] report file downloaded&quot;]" />
+            <Assign DisplayName="Assign today value to variable " sap:VirtualizedContainerService.HintSize="1105.6,82.4" sap2010:WorkflowViewState.IdRef="Assign_2">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[today]</OutArgument>
               </Assign.To>
@@ -903,15 +906,15 @@
                 <InArgument x:TypeArguments="x:String">[Strings.Format(Now.Date, "dd-MM-yyyy")]</InArgument>
               </Assign.Value>
             </Assign>
-            <Assign DisplayName="Assign fileName to be changed" sap:VirtualizedContainerService.HintSize="952,82.4" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign DisplayName="Assign fileName to be changed" sap:VirtualizedContainerService.HintSize="1105.6,82.4" sap2010:WorkflowViewState.IdRef="Assign_3">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[fileNameToBeSaved]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[today + "-" + firstMenuName + "-" + secondMenuName + If(columnOption &lt;&gt; Nothing, "-" + columnOption + "-", "") + If(timeOption &lt;&gt; Nothing, "-" + timeOption + "-", "") + If(dateOption &lt;&gt; Nothing, "-" + dateOption + "-", "") + ".csv"]</InArgument>
+                <InArgument x:TypeArguments="x:String" xml:space="preserve">[today + "-" + firstMenuName + "-" + secondMenuName + If(columnOption &lt;&gt; Nothing,  "-" + columnOption, "") + If(timeOption &lt;&gt; Nothing, "-" + timeOption, "") + If(dateOption &lt;&gt; Nothing, "-" + dateOption, "")]</InArgument>
               </Assign.Value>
             </Assign>
-            <TryCatch DisplayName="Try to remove default file if exists" sap:VirtualizedContainerService.HintSize="952,314.4" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+            <TryCatch DisplayName="Try to remove default file if exists" sap:VirtualizedContainerService.HintSize="1105.6,314.4" sap2010:WorkflowViewState.IdRef="TryCatch_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -973,7 +976,7 @@
                 </Catch>
               </TryCatch.Catches>
             </TryCatch>
-            <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[&quot;Q:\Users\k_demirtas2\uiPathCSV\&quot; + fileNameToBeSaved]" DisplayName="Move File with new name" sap:VirtualizedContainerService.HintSize="952,160" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="Q:\Users\k_demirtas2\Downloads\data-export.csv">
+            <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[&quot;Q:\Users\k_demirtas2\uiPathCSV\&quot; + fileNameToBeSaved + &quot;.csv&quot;]" DisplayName="Move File with new name" sap:VirtualizedContainerService.HintSize="1105.6,160" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="Q:\Users\k_demirtas2\Downloads\data-export.csv">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -981,7 +984,54 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:MoveFile>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="952,144" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;[DOWNLOAD REPORT] downloaded file moved to specified path&quot;]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1105.6,144" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;[DOWNLOAD REPORT] downloaded file moved to specified path&quot;]" />
+            <Assign sap:VirtualizedContainerService.HintSize="1105.6,82.4" sap2010:WorkflowViewState.IdRef="Assign_4">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[out_file_name]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[fileNameToBeSaved]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1105.6,504" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+              <TryCatch.Try>
+                <Sequence sap:VirtualizedContainerService.HintSize="449.6,272.8" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Home'" sap:VirtualizedContainerService.HintSize="387.2,157.6" sap2010:WorkflowViewState.IdRef="NClick_22" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5512f100-deb8-4d39-b225-011579301b80" Version="V3">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://analytics.google.com/analytics/web/?pli=1#/p271248987/reports/reportinghub?params=_u..nav%3Dmaui%26_u.dateOption%3Dlast7Days&amp;collectionId=5534261528" DesignTimeRectangle="79, 205, 50, 25" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'Home'" FullSelectorArgument="&lt;webctrl class='item-text' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='item-text' tag='SPAN' type='' aaname='Home' check:innerText='Home' /&gt;" Guid="05594de8-8c8c-4850-bf40-0caa26aae1d5" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADYAAAAdCAYAAADhLp8oAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAK2SURBVFhH7ZbPZyNhGMf3D8uhUlJz2DmF2FhyyipzSpXGauguZaRkRPUQQqitEMLQErWrFSo9xFI5VKoSyhDeyxBy/u7z5n0n86PTbHVyaHbn8DnM+z7P+76fed/nnfkwm83wLxKLrRux2LoRi60b/4cYuz3DSaWCy3t/kIChf1qh/jP0J2H97wufmNXUkNjYhHHjDxKM0d7epH4N7XFY//siFnuNmD1hYIQ9De/3YYfHzsdgtq/tGTKX2SF9Ep/YsJ59k5h1dQxN4X2SlIqdaheWd9E3FTF2d4zLUhZJJ1YpoHlHgndnKKnKYoxkRsf1kyef89RFXVPd3A0FH7VaaM37xPpHIqFY76J3FcSEkeX9frER7fJ8IiWHks4vFx2ljFjg1tcOmDO+FNtSFFr0Hgy6pIxdKaim8SlFfflv88urnBf5SW8+u4WRpthUFqWaSevpoK3nscXz08cYBHY+VGw5HjHLRJG3pSvoed/alHZX44tTUP4pj5UUS6g6esyJtXBREOMmD37BXuT/Rl3l7RX0ZdugqtKzSjvOZK5g9EOUT+nc3x5px9j53jx+pzlejLHgvoEcFznsimcplqs/+OKcOY2u2+Yee0fMES3gNLiuti7mObr15L8g9toaW3rZjFvY4RNut2DxZykWfAnhcwbF6BjysZax6zm2RDSxlhArmlYglnhhx94qdkI1mMg2MFzELCeSmLfG+ou6IaYMvUNeE89r7G1iNnrfec0+r7HZYwtGtYNh4GaMJkYMavJmU/IoN+i2Mhvuraa1MHJuq0hiBD/afNfoZWl6C9dUXxe1PeR4W4rW9OjNX4EY/4ccNvfFBFxwjoIvB6YrxYkqxnkwUf4sXppDMrOPNn0H3VyBTywSU1v8Dfzlj2AV2EzOM3n5D2V1Yu+MWGzdiMXWjVhsvZjhD9NbBdqv0lRwAAAAAElFTkSuQmCC" InformativeScreenshot="2340db17bbddf7a79083446317154d2e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Analytics 360 | Reports snapshot' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                </Sequence>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="452.8,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <Sequence sap:VirtualizedContainerService.HintSize="449.6,259.2" sap2010:WorkflowViewState.IdRef="Sequence_44">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="387.2,144" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;[DOWNLOAD REPORT] cannot refresh report page&quot;]" />
+                    </Sequence>
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>

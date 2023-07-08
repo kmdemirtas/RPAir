@@ -1,0 +1,647 @@
+(other),0
+Istanbul,1
+Gaziantep,10
+Tunis,100
+Cairo,101
+Casablanca,102
+Lyon,103
+Bishkek,104
+Montreal,105
+Trabzon,106
+Antakya,107
+Riga,108
+The Hague,109
+Frankfurt,11
+Islamabad,110
+Elazig,111
+Belgrade,112
+Iskenderun,113
+Manama,114
+Sharjah,115
+Gebze,116
+Gothenburg,117
+San Francisco,118
+Tallinn,119
+Paris,12
+Cape Town,120
+Dusseldorf,121
+Chisinau,122
+Batman,123
+Dammam,124
+Nairobi,125
+Miami,126
+Seattle,127
+Sakarya,128
+Essen,129
+Antalya,13
+Edinburgh,130
+Manchester,131
+Mexico City,132
+Nizhny Novgorod,133
+Jakarta,134
+Dortmund,135
+Turin,136
+Aydin,137
+Zagreb,138
+Sao Paulo,139
+Bursa,14
+Panama City,140
+Haarlem,141
+Sydney,142
+Sarajevo,143
+Boston,144
+Hanover,145
+Washington,146
+Ljubljana,147
+Minsk,148
+Valencia,149
+New York,15
+Nuremberg,150
+Kuwait City,151
+Vancouver,152
+Marseille,153
+Canakkale,154
+Marmaris,155
+Accra,156
+Delhi,157
+Abuja,158
+Naples,159
+Kahramanmaras,16
+Domodedovo,160
+Porto,161
+Lausanne,162
+Melbourne,163
+Rize,164
+Buenos Aires,165
+Strasbourg,166
+Kazan,167
+Geneva,168
+Medina,169
+Berlin,17
+Tekirdag,170
+Alexandria,171
+Jerusalem,172
+Tirana,173
+Yalikavak,174
+Mardin,175
+Bowling Green,176
+Sivas,177
+Norderstedt,178
+Munster,179
+Vienna,18
+Yangon,180
+Bordeaux,181
+Bologna,182
+Podgorica,183
+Palermo,184
+Cerkezkoy,185
+Giresun,186
+Sheffield,187
+Yekaterinburg,188
+Douala,189
+Konya,19
+Petah Tikva,190
+Ordu,191
+Nur-Sultan,192
+Luxembourg,193
+Rawalpindi,194
+Utrecht,195
+Philadelphia,196
+Graz,197
+Adiyaman,198
+Florence,199
+(not set),2
+Milan,20
+Leeds,200
+Mannheim,201
+Bruck an der Leitha,202
+Mugla,203
+Yaounde,204
+Baltimore,205
+Johannesburg,206
+Leipzig,207
+Haifa,208
+Cluj-Napoca,209
+Dubai,21
+Sulaymaniyah,210
+Nevsehir,211
+Krasnodar,212
+Dakar,213
+Wolverhampton,214
+Bremen,215
+San Diego,216
+Bonn,217
+Karlsruhe,218
+Buyukcekmece,219
+Dublin,22
+Genoa,220
+Abha,221
+Famagusta,222
+Wroclaw,223
+Batumi,224
+Manisa,225
+Cork,226
+Dar es Salaam,227
+Colombo,228
+Milton Keynes,229
+Samsun,23
+New Cairo City,230
+Astana,231
+Plymouth,232
+Duisburg,233
+Kassel,234
+Nashville,235
+Basel,236
+Norwich,237
+Oludeniz,238
+Catania,239
+Kayseri,24
+Varna,240
+Marrakesh,241
+Seville,242
+Addis Ababa,243
+Aachen,244
+Bielefeld,245
+Pretoria,246
+Chattogram,247
+Erzincan,248
+Bamako,249
+Mersin,25
+Manavgat,250
+Agri,251
+Kastamonu,252
+Liverpool,253
+Austin,254
+Golcuk,255
+Ghent,256
+Bergen Municipality,257
+Bern,258
+Sumqayit,259
+Baku,26
+Rajshahi,260
+Thessaloniki,261
+Ottawa,262
+Sacramento,263
+Alanya,264
+Cizre,265
+Kathmandu,266
+Hyderabad,267
+Krakow,268
+Orlando,269
+Riyadh,27
+Kharkiv,270
+Malmo,271
+Toulouse,272
+Kinshasa,273
+Khartoum,274
+Rishon LeTsiyon,275
+Male,276
+Bolu,277
+Oran,278
+Bratislava,279
+Amsterdam,28
+Manila,280
+Newcastle upon Tyne,281
+Glasgow,282
+Odesa,283
+Edirne,284
+Mississauga,285
+Osmaniye,286
+Faisalabad,287
+Las Vegas,288
+Cagliari,289
+Tel Aviv-Yafo,29
+Medellin,290
+Side,291
+Giza,292
+Abidjan,293
+Netanya,294
+Denpasar,295
+Kars,296
+Akcay,297
+Ho Chi Minh City,298
+Phoenix,299
+Ankara,3
+Munich,30
+Montijo,300
+Belfast,301
+Pristina,302
+Cardiff,303
+Pune,304
+Kampala,305
+Venice,306
+Mogadishu,307
+Malaga,308
+Quezon City,309
+Cologne,31
+Yalova,310
+Busan,311
+Aarhus,312
+Isparta,313
+Luleburgaz,314
+Brunswick,315
+Tokat,316
+Lille,317
+Gelsenkirchen,318
+Samara,319
+Tbilisi,32
+Shanghai,320
+Ahmedabad,321
+New Delhi,322
+Ostia,323
+Tver,324
+Augsburg,325
+Lviv,326
+Surrey,327
+Multan,328
+Chennai,329
+Saint Petersburg,33
+Luton,330
+Nice,331
+Winterthur,332
+Timisoara,333
+Croydon,334
+Naaldwijk,335
+Corum,336
+Kingston upon Hull,337
+Salina,338
+Akcaabat,339
+Hamburg,34
+Port Harcourt,340
+Shah Alam,341
+Tripoli,342
+Perth,343
+Bengaluru,344
+Frisco,345
+Tabriz,346
+Brno,347
+Freiburg im Breisgau,348
+Koblenz,349
+Madrid,35
+Kuta,350
+Rosenheim,351
+Kabul,352
+Luneburg,353
+Schwerin,354
+Constantine,355
+Slough,356
+Zug,357
+Bad Kreuznach,358
+Denver,359
+Sanliurfa,36
+Bukhara,360
+Roseville,361
+Ludwigsburg,362
+Bulle,363
+Bochum,364
+Alacati,365
+Schwabach,366
+Didim,367
+Gurgaon,368
+Poznan,369
+Erzurum,37
+Kitzingen,370
+Acton,371
+Bad Oeynhausen,372
+Bad Mergentheim,373
+Aberdeen,374
+Calgary,375
+Columbus,376
+Innsbruck,377
+Cambridge,378
+Goslar,379
+Van,38
+Ludhiana,380
+Novosibirsk,381
+Kirikkale,382
+Rostov-on-Don,383
+Arlington,384
+Montpellier,385
+Saalfeld,386
+Frankenberg (Eder),387
+Brisbane,388
+Brampton,389
+Los Angeles,39
+Las Palmas de Gran Canaria,390
+Ufa,391
+Cloppenburg,392
+38899,393
+Guangzhou,394
+Itzehoe,395
+Grimma,396
+Dresden,397
+Dnipro,398
+Kirsehir,399
+Izmir,4
+Bucharest,40
+Bari,400
+Isfahan,401
+Tampa,402
+Hanoi,403
+Ullensaker Municipality,404
+Cebu City,405
+Magdeburg,406
+Cancun,407
+Ashgabat,408
+Charlotte,409
+Karachi,41
+Aksaray,410
+Siirt,411
+Hamm,412
+Padua,413
+Mulhouse,414
+Taraz,415
+Damascus,416
+Leicester,417
+Duzce,418
+Chelyabinsk,419
+Jeddah,42
+6th of October City,420
+Khulna,421
+Brandenburg,422
+Dushanbe,423
+Incheon,424
+Kaunas,425
+Shibuya City,426
+Bristol,427
+Thun,428
+Sinop,429
+Bodrum,43
+Portland,430
+Afyonkarahisar,431
+Shymkent,432
+Luckenwalde,433
+Pireas,434
+Lucerne,435
+Milwaukee,436
+Irvine,437
+Sirnak,438
+Rabat,439
+Doha,44
+Achim,440
+Lyss,441
+Bartin,442
+Maracaibo,443
+Fes,444
+Grenoble,445
+Santiago,446
+Cumilla,447
+Mecca,448
+Santa Clara,449
+Zurich,45
+Ballerup,450
+Novi Sad,451
+Sochi,452
+Auckland,453
+Silivri,454
+Richmond,455
+Tampere,456
+Schiphol-Rijk,457
+Bydgoszcz,458
+Rostock,459
+Stuttgart,46
+Salzgitter,460
+San Antonio,461
+Havana,462
+Osaka,463
+Melle,464
+Wuppertal,465
+Erlangen,466
+Reston,467
+Freiberg,468
+Lugano,469
+Dhaka,47
+Edmonton,470
+Cankiri,471
+Coventry,472
+Karaganda,473
+Shiraz,474
+Plano,475
+Kutahya,476
+Saarbrucken,477
+Sinsheim,478
+Fremont,479
+Beirut,48
+Bilbao,480
+Frauenfeld,481
+Hamilton,482
+Port Louis,483
+Wiesbaden,484
+Plovdiv,485
+Liege,486
+Constanta,487
+Fort Worth,488
+Brasov,489
+Rome,49
+Amasya,490
+Peshawar,491
+Ontario,492
+Luanda,493
+Valladolid,494
+Minneapolis,495
+Chandigarh,496
+Karaj,497
+Hialeah,498
+Katowice,499
+London,5
+Lahore,50
+Zonguldak,500
+Hanau,501
+Mandalay,502
+Miami Beach,503
+Ploiesti,504
+Yaroslavl,505
+Monchengladbach,506
+Schaerbeek,507
+Cali,508
+Holon,509
+Chicago,51
+Heilbronn,510
+Cotonou,511
+Artvin,512
+Freising,513
+Nouakchott,514
+Nantes,515
+Limburg,516
+Riverside,517
+Usak,518
+Bradford,519
+Singapore,52
+Daejeon,520
+Libreville,521
+Rio de Janeiro,522
+Santo Domingo,523
+Siegen,524
+Gibsons,525
+Metz,526
+Kladno,527
+Verona,528
+Jacksonville,529
+Clarksville,53
+Gujranwala,530
+Vacoas-Phoenix,531
+Nottingham,532
+Karabuk,533
+Kiel,534
+Dalung,535
+Cham,536
+Twistringen,537
+Durban,538
+Eschweiler,539
+Toronto,54
+Tangier,540
+Fiesch,541
+Crailsheim,542
+Barranquilla,543
+Odessa,544
+Richmond Hill,545
+Pavlodar,546
+Makati,547
+Vantaa,548
+Greifswald,549
+Lisbon,55
+Saint-Denis,550
+Rheine,551
+Quito,552
+Ilmenau,553
+Iasi,554
+Southampton,555
+Bad Neustadt an der Saale,556
+Gallarate,557
+Alzey,558
+Tarsus,559
+Antwerp,56
+Minato City,560
+Annecy,561
+Burnaby,562
+Kigali,563
+Mechernich,564
+Bandirma,565
+Rehovot,566
+Kirklareli,567
+Darmstadt,568
+Goynuk,569
+Rotterdam,57
+Hoyerswerda,570
+Yokohama,571
+Salzburg,572
+Merida,573
+Eregli,574
+Rahden,575
+Sandton,576
+Sialkot,577
+Raleigh,578
+Meppen,579
+Dallas,58
+Kirchheimbolanden,580
+Brescia,581
+Eisenach,582
+Freetown,583
+Cleveland,584
+Bolton,585
+Pritzwalk,586
+Giessen,587
+Darica,588
+Reading,589
+Barcelona,59
+Mainz,590
+Vaughan,591
+Vila Nova de Gaia,592
+Wolgast,593
+Igdir,594
+Payallar,595
+Barquisimeto,596
+Lusaka,597
+Zaventem,598
+Oakland,599
+Adana,6
+Mumbai,60
+Surabaya,600
+Jaipur,601
+Jena,602
+Boardman,603
+Quincy,604
+Amsterdam Airport Schiphol,605
+Winterberg,606
+Calw,607
+Lodz,608
+Shenzhen,609
+Eskisehir,61
+Siauliai,610
+Niamey,611
+Lucknow,612
+Korfez,613
+North Bergen,614
+Erkner,615
+Trondheim Municipality,616
+Langenthal,617
+Mus,618
+Creil,619
+Tashkent,62
+Zaporizhzhia,620
+Irving,621
+Sylhet,622
+Brest,623
+Yerevan,624
+Stoke-on-Trent,625
+Gdansk,626
+Sharm El-Sheikh,627
+Oulu,628
+Ludwigshafen,629
+Stockholm,63
+Cordoba,630
+Chiyoda City,631
+Ouagadougou,632
+Clifton,633
+Sale,634
+Euskirchen,635
+Brighton,636
+Be'er Sheva,637
+Aliaga,638
+Conakry,639
+Brussels,64
+Palma,640
+Charleville-Mezieres,641
+Indore,642
+Jersey City,643
+Lich,644
+Stavanger Municipality,645
+Kaiserslautern,646
+Kyiv,65
+Nicosia,66
+Houston,67
+Tehran,68
+Malatya,69
+Diyarbakir,7
+Denizli,70
+Kuala Lumpur,71
+Oslo Municipality,72
+Warsaw,73
+Arnavutkoy,74
+Lagos,75
+Almaty,76
+Copenhagen,77
+Budapest,78
+Hagerstown,79
+Moscow,8
+Abu Dhabi,80
+Bogota,81
+Corlu,82
+Sofia,83
+Prague,84
+Fethiye,85
+Seoul,86
+Vilnius,87
+San Jose,88
+Helsinki,89
+Ashburn,9
+Birmingham,90
+Atlanta,91
+Bangkok,92
+Baghdad,93
+Balikesir,94
+Kiziltepe,95
+Eindhoven,96
+Ulaanbaatar,97
+Caracas,98
+Athens,99
