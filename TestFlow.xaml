@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="TestFlow" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1410.4,2906.4" sap2010:WorkflowViewState.IdRef="TestFlow_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uasc="clr-namespace:UiPath.Activities.System.Collections;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="TestFlow" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1410.4,2916.8" sap2010:WorkflowViewState.IdRef="TestFlow_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uasc="clr-namespace:UiPath.Activities.System.Collections;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -100,193 +100,263 @@
       <AssemblyReference>System.Private.Xml</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TestFlow" sap:VirtualizedContainerService.HintSize="562.4,2841.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
-    <Sequence.Variables>
-      <Variable x:TypeArguments="ui:Browser" Name="browser" />
-      <Variable x:TypeArguments="x:String" Name="downloaded_report_name" />
-      <Variable x:TypeArguments="scg:List(scg:Dictionary(x:String, x:String))" Name="requirementList" />
-      <Variable x:TypeArguments="scg:List(scg:Dictionary(x:String, x:String))" Default="[new List(Of Dictionary(Of String, String))()]" Name="downloadedReports" />
-      <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="downloadedReportInfo" />
-      <Variable x:TypeArguments="scg:List(x:String)" Name="processed_reports_list" />
-      <Variable x:TypeArguments="scg:Dictionary(x:String, scg:Dictionary(x:String, x:String))" Name="lookups" />
-    </Sequence.Variables>
+  <Sequence sap:VirtualizedContainerService.HintSize="624.8,2852" sap2010:WorkflowViewState.IdRef="Sequence_8">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ReadReportRequestCSV.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="500,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="ReadReportRequestCSV.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="scg:List(scg:Dictionary(x:String, x:String))" x:Key="reportRequestList">[requirementList]</OutArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <If Condition="[requirementList.Count &lt;= 0]" DisplayName="If requirement list is empty throw exception" sap:VirtualizedContainerService.HintSize="500,52.8" sap2010:WorkflowViewState.IdRef="If_1">
+    <Sequence DisplayName="TestFlow" sap:VirtualizedContainerService.HintSize="562.4,2740" sap2010:WorkflowViewState.IdRef="Sequence_1">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="ui:Browser" Name="browser" />
+        <Variable x:TypeArguments="x:String" Name="downloaded_report_name" />
+        <Variable x:TypeArguments="scg:List(scg:Dictionary(x:String, x:String))" Name="requirementList" />
+        <Variable x:TypeArguments="scg:List(scg:Dictionary(x:String, x:String))" Default="[new List(Of Dictionary(Of String, String))()]" Name="downloadedReports" />
+        <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="downloadedReportInfo" />
+        <Variable x:TypeArguments="scg:List(x:String)" Name="processed_reports_list" />
+        <Variable x:TypeArguments="scg:Dictionary(x:String, scg:Dictionary(x:String, x:String))" Name="lookups" />
+      </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="377.6,180" sap2010:WorkflowViewState.IdRef="Sequence_2">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <Throw Exception="[new Exception(&quot;Report requirements list is empty&quot;)]" sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="Throw_1" />
-        </Sequence>
-      </If.Then>
-      <If.Else>
-        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_3" />
-      </If.Else>
-    </If>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ReadLookupCache.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="500,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="ReadLookupCache.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="scg:List(scg:Dictionary(x:String, x:String))" x:Key="lookup_read_props">[requirementList]</InArgument>
-        <OutArgument x:TypeArguments="scg:Dictionary(x:String, scg:Dictionary(x:String, x:String))" x:Key="lookups">[lookups]</OutArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Login.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="500,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Login.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="ui:Browser" x:Key="out_browser">[browser]</OutArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SelectGA4.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="500,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="SelectGA4.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InOutArgument x:TypeArguments="ui:Browser" x:Key="in_out_browser">[browser]</InOutArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <ui:ForEach x:TypeArguments="scg:Dictionary(x:String, x:String)" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="500,807.2" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[requirementList]">
-      <ui:ForEach.Body>
-        <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:String)">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="currentRequirement" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="466.4,619.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
-            <Sequence.Variables>
-              <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="currentReq" />
-            </Sequence.Variables>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Read report request from csv file" sap:VirtualizedContainerService.HintSize="500,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="ReadReportRequestCSV.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <OutArgument x:TypeArguments="scg:List(scg:Dictionary(x:String, x:String))" x:Key="reportRequestList">[requirementList]</OutArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:InvokeWorkflowFile>
+      <If Condition="[requirementList.Count &lt;= 0]" DisplayName="If requirement list is empty throw exception" sap:VirtualizedContainerService.HintSize="500,363.2" sap2010:WorkflowViewState.IdRef="If_1">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If.Then>
+          <Sequence sap:VirtualizedContainerService.HintSize="377.6,180" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DownloadReport.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="423.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="DownloadReport.xaml">
-              <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="x:String" x:Key="firstMenuName">[currentRequirement("first_menu_name")]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="secondMenuName">[currentRequirement("second_menu_name")]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="columnOption">[currentRequirement("column_option")]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="timeOption">[currentRequirement("time_option")]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="dateOption">[currentRequirement("date_option")]</InArgument>
-                <InOutArgument x:TypeArguments="ui:Browser" x:Key="in_out_browser">[browser]</InOutArgument>
-                <OutArgument x:TypeArguments="x:String" x:Key="out_file_name">[downloaded_report_name]</OutArgument>
-              </ui:InvokeWorkflowFile.Arguments>
-            </ui:InvokeWorkflowFile>
-            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="423.2,194.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
-              <ui:MultipleAssign.AssignOperations>
-                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
-                    <ui:AssignOperation.To>
-                      <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[downloadedReportInfo]</OutArgument>
-                    </ui:AssignOperation.To>
-                    <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[new Dictionary(Of String, String)]</InArgument>
-                    </ui:AssignOperation.Value>
-                  </ui:AssignOperation>
-                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
-                    <ui:AssignOperation.To>
-                      <OutArgument x:TypeArguments="x:String">[downloadedReportInfo("column_option")]</OutArgument>
-                    </ui:AssignOperation.To>
-                    <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="x:String">[currentRequirement("column_option")]</InArgument>
-                    </ui:AssignOperation.Value>
-                  </ui:AssignOperation>
-                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
-                    <ui:AssignOperation.To>
-                      <OutArgument x:TypeArguments="x:String">[downloadedReportInfo("time_option")]</OutArgument>
-                    </ui:AssignOperation.To>
-                    <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="x:String">[currentRequirement("time_option")]</InArgument>
-                    </ui:AssignOperation.Value>
-                  </ui:AssignOperation>
-                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
-                    <ui:AssignOperation.To>
-                      <OutArgument x:TypeArguments="x:String">[downloadedReportInfo("file_name")]</OutArgument>
-                    </ui:AssignOperation.To>
-                    <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="x:String">[downloaded_report_name]</InArgument>
-                    </ui:AssignOperation.Value>
-                  </ui:AssignOperation>
-                </scg:List>
-              </ui:MultipleAssign.AssignOperations>
-            </ui:MultipleAssign>
-            <uasc:AppendItemToCollection x:TypeArguments="scg:Dictionary(x:String, x:String)" Collection="[downloadedReports]" DisplayName="Append items to collection" sap:VirtualizedContainerService.HintSize="423.2,141.6" sap2010:WorkflowViewState.IdRef="AppendItemToCollection`1_1">
-              <uasc:AppendItemToCollection.Items>
-                <scg:List x:TypeArguments="InArgument(scg:Dictionary(x:String, x:String))" Capacity="4">
-                  <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[downloadedReportInfo]</InArgument>
-                </scg:List>
-              </uasc:AppendItemToCollection.Items>
-            </uasc:AppendItemToCollection>
+            <Throw Exception="[new Exception(&quot;Report requirements list is empty&quot;)]" sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="Throw_1" />
           </Sequence>
-        </ActivityAction>
-      </ui:ForEach.Body>
-    </ui:ForEach>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="500,334.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[browser]" OpenMode="Never" ScopeGuid="b805d194-46fe-414b-9278-3bc823ddea40" Version="V2">
-      <uix:NApplicationCard.Body>
-        <ActivityAction x:TypeArguments="x:Object">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,197.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
+        </If.Then>
+        <If.Else>
+          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_3" />
+        </If.Else>
+      </If>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ReadLookupCache.xaml to process in Machine Learning" sap:VirtualizedContainerService.HintSize="500,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="ReadLookupCache.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="scg:List(scg:Dictionary(x:String, x:String))" x:Key="lookup_read_props">[requirementList]</InArgument>
+          <OutArgument x:TypeArguments="scg:Dictionary(x:String, scg:Dictionary(x:String, x:String))" x:Key="lookups">[lookups]</OutArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:InvokeWorkflowFile>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Login to Google If Not Logged In" sap:VirtualizedContainerService.HintSize="500,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Login.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <OutArgument x:TypeArguments="ui:Browser" x:Key="out_browser">[browser]</OutArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:InvokeWorkflowFile>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SelectGA4 Ecommerce Report If Not Opened" sap:VirtualizedContainerService.HintSize="500,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="SelectGA4.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InOutArgument x:TypeArguments="ui:Browser" x:Key="in_out_browser">[browser]</InOutArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:InvokeWorkflowFile>
+      <ui:ForEach x:TypeArguments="scg:Dictionary(x:String, x:String)" CurrentIndex="{x:Null}" DisplayName="For Each Requested Report" sap:VirtualizedContainerService.HintSize="500,807.2" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[requirementList]">
+        <ui:ForEach.Body>
+          <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:String)">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="currentRequirement" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="466.4,619.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="currentReq" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Download Reports" sap:VirtualizedContainerService.HintSize="423.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="DownloadReport.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="firstMenuName">[currentRequirement("first_menu_name")]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="secondMenuName">[currentRequirement("second_menu_name")]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="columnOption">[currentRequirement("column_option")]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="timeOption">[currentRequirement("time_option")]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="dateOption">[currentRequirement("date_option")]</InArgument>
+                  <InOutArgument x:TypeArguments="ui:Browser" x:Key="in_out_browser">[browser]</InOutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_file_name">[downloaded_report_name]</OutArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:InvokeWorkflowFile>
+              <ui:MultipleAssign DisplayName="Create Downloaded Report Info Dictionary" sap:VirtualizedContainerService.HintSize="423.2,194.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                <ui:MultipleAssign.AssignOperations>
+                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[downloadedReportInfo]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[new Dictionary(Of String, String)]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[downloadedReportInfo("column_option")]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">[currentRequirement("column_option")]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[downloadedReportInfo("time_option")]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">[currentRequirement("time_option")]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[downloadedReportInfo("file_name")]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">[downloaded_report_name]</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                  </scg:List>
+                </ui:MultipleAssign.AssignOperations>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:MultipleAssign>
+              <uasc:AppendItemToCollection x:TypeArguments="scg:Dictionary(x:String, x:String)" Collection="[downloadedReports]" DisplayName="Add Created Report Dictionary To List" sap:VirtualizedContainerService.HintSize="423.2,141.6" sap2010:WorkflowViewState.IdRef="AppendItemToCollection`1_1">
+                <uasc:AppendItemToCollection.Items>
+                  <scg:List x:TypeArguments="InArgument(scg:Dictionary(x:String, x:String))" Capacity="4">
+                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[downloadedReportInfo]</InArgument>
+                  </scg:List>
+                </uasc:AppendItemToCollection.Items>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uasc:AppendItemToCollection>
+            </Sequence>
+          </ActivityAction>
+        </ui:ForEach.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:ForEach>
+      <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Close Google Chrome Tab" sap:VirtualizedContainerService.HintSize="500,52.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[browser]" OpenMode="Never" ScopeGuid="b805d194-46fe-414b-9278-3bc823ddea40" Version="V2">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="449.6,197.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NNavigateBrowser Action="CloseTab" DisplayName="Navigate Browser - Close Tab" sap:VirtualizedContainerService.HintSize="387.2,82.4" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_1" Version="V3" />
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp Area="0, 0, 0, 0" />
+        </uix:NApplicationCard.TargetApp>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </uix:NApplicationCard>
+      <If Condition="[downloadedReports.Count &lt;= 0]" DisplayName="Check If Reports Are Downloaded" sap:VirtualizedContainerService.HintSize="500,363.2" sap2010:WorkflowViewState.IdRef="If_2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If.Then>
+          <Sequence sap:VirtualizedContainerService.HintSize="377.6,180" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NNavigateBrowser Action="CloseTab" DisplayName="Navigate Browser - Close Tab" sap:VirtualizedContainerService.HintSize="387.2,82.4" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_1" Version="V3" />
+            <Throw Exception="[new Exception(&quot;there is no report found dowloded&quot;)]" sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="Throw_2" />
           </Sequence>
-        </ActivityAction>
-      </uix:NApplicationCard.Body>
-      <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="0, 0, 0, 0" />
-      </uix:NApplicationCard.TargetApp>
-    </uix:NApplicationCard>
-    <If Condition="[downloadedReports.Count &lt;= 0]" sap:VirtualizedContainerService.HintSize="500,363.2" sap2010:WorkflowViewState.IdRef="If_2">
-      <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="377.6,180" sap2010:WorkflowViewState.IdRef="Sequence_5">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <Throw Exception="[new Exception(&quot;there is no report found dowloded&quot;)]" sap:VirtualizedContainerService.HintSize="334.4,90.4" sap2010:WorkflowViewState.IdRef="Throw_2" />
-        </Sequence>
-      </If.Then>
-      <If.Else>
-        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_6" />
-      </If.Else>
-    </If>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="ProcessReports.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="500,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="ProcessReports.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="scg:List(scg:Dictionary(x:String, x:String))" x:Key="downloadedReports">
-          <VisualBasicValue x:TypeArguments="scg:List(scg:Dictionary(x:String, x:String))" ExpressionText="downloadedReports" />
-        </InArgument>
-        <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="processed_reports_list">
-          <VisualBasicReference x:TypeArguments="scg:List(x:String)" ExpressionText="processed_reports_list" />
-        </OutArgument>
-        <InArgument x:TypeArguments="scg:Dictionary(x:String, scg:Dictionary(x:String, x:String))" x:Key="lookups">
-          <VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, scg:Dictionary(x:String, x:String))" ExpressionText="lookups" />
-        </InArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SendProcessedReports.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="500,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="SendProcessedReports.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="scg:List(x:String)" x:Key="processed_reports_list">
-          <VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="processed_reports_list" />
-        </InArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="500,90.4" sap2010:WorkflowViewState.IdRef="WriteLine_1" />
+        </If.Then>
+        <If.Else>
+          <Sequence sap2010:WorkflowViewState.IdRef="Sequence_6" />
+        </If.Else>
+      </If>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Preprocess and Process Reports and Predict With AI" sap:VirtualizedContainerService.HintSize="500,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="ProcessReports.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="scg:List(scg:Dictionary(x:String, x:String))" x:Key="downloadedReports">[downloadedReports]</InArgument>
+          <OutArgument x:TypeArguments="scg:List(x:String)" x:Key="processed_reports_list">[processed_reports_list]</OutArgument>
+          <InArgument x:TypeArguments="scg:Dictionary(x:String, scg:Dictionary(x:String, x:String))" x:Key="lookups">[lookups]</InArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:InvokeWorkflowFile>
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Send Processed Reports to Team Mail" sap:VirtualizedContainerService.HintSize="500,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="SendProcessedReports.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="scg:List(x:String)" x:Key="processed_reports_list">[processed_reports_list]</InArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:InvokeWorkflowFile>
+    </Sequence>
   </Sequence>
 </Activity>
