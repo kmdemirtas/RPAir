@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1090.4,1670.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1410.4,1864</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>PreprocessDownloadedReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -85,31 +85,25 @@
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="PreprocessDownloadedReport" sap:VirtualizedContainerService.HintSize="649.6,1605.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="PreprocessDownloadedReport" sap:VirtualizedContainerService.HintSize="550.4,1799.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="file_content" />
       <Variable x:TypeArguments="s:String[]" Name="lines" />
       <Variable x:TypeArguments="x:Int32" Default="10" Name="line_count_to_be_deleted" />
-      <Variable x:TypeArguments="x:Int32" Name="csv_line_count">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" Value="4" />
-        </Variable.Default>
-      </Variable>
-      <Variable x:TypeArguments="x:Int32" Name="curr_line">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:Int32" Default="4" Name="csv_line_count" />
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="curr_line" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ReadTextFile File="{x:Null}" Content="[file_content]" DisplayName="Read Text File" FileName="[&quot;Q:\Users\k_demirtas2\uiPathCSV\&quot; + file_name + &quot;.csv&quot;]" sap:VirtualizedContainerService.HintSize="587.2,80.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
-    <Assign sap:VirtualizedContainerService.HintSize="587.2,81.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <ui:ReadTextFile File="{x:Null}" Content="[file_content]" DisplayName="Read Text File" FileName="[&quot;Q:\Users\k_demirtas2\uiPathCSV\&quot; + file_name + &quot;.csv&quot;]" sap:VirtualizedContainerService.HintSize="488,80.8" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="488,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;[DOWNLOAD RAPORT] File read from txt file&quot;]" />
+    <Assign sap:VirtualizedContainerService.HintSize="488,81.6" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="s:String[]">[lines]</OutArgument>
       </Assign.To>
@@ -117,20 +111,20 @@
         <InArgument x:TypeArguments="s:String[]">[file_content.Split(Environment.Newline).Skip(10).ToArray]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="587.2,920.8" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[lines]">
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="488,749.6" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[lines]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:String">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:String" Name="currentLine" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="553.6,732.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="454.4,561.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:AppendLine File="{x:Null}" DisplayName="Append Line" FileName="[&quot;Q:\Users\k_demirtas2\uiPathCSV\&quot; + file_name + &quot;-processed.csv&quot;]" sap:VirtualizedContainerService.HintSize="510.4,134.4" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[currentLine]" UseDefaultEncoding="False" />
-            <If Condition="[curr_line &gt;= csv_line_count]" sap:VirtualizedContainerService.HintSize="510.4,468.8" sap2010:WorkflowViewState.IdRef="If_1">
+            <ui:AppendLine File="{x:Null}" DisplayName="Append Line" FileName="[&quot;Q:\Users\k_demirtas2\uiPathCSV\&quot; + file_name + &quot;-processed.csv&quot;]" sap:VirtualizedContainerService.HintSize="411.2,134.4" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[currentLine]" UseDefaultEncoding="False" />
+            <If Condition="[curr_line &gt;= csv_line_count]" sap:VirtualizedContainerService.HintSize="411.2,297.6" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
                 <Sequence sap:VirtualizedContainerService.HintSize="377.6,114.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <sap:WorkflowViewStateService.ViewState>
@@ -163,7 +157,8 @@
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
-    <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[&quot;Q:\Users\k_demirtas2\uiPathCSV\&quot; + file_name + &quot;.csv&quot;]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="587.2,160" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="[&quot;Q:\Users\k_demirtas2\uiPathCSV\&quot; + file_name + &quot;-processed.csv&quot;]" />
-    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="587.2,90.4" sap2010:WorkflowViewState.IdRef="WriteLine_1" />
+    <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="[&quot;Q:\Users\k_demirtas2\uiPathCSV\&quot; + file_name + &quot;.csv&quot;]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="488,160" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="[&quot;Q:\Users\k_demirtas2\uiPathCSV\&quot; + file_name + &quot;-processed.csv&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="488,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;[DOWNLOAD RAPORT] File has been moved&quot;]" />
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="488,90.4" sap2010:WorkflowViewState.IdRef="WriteLine_1" />
   </Sequence>
 </Activity>
